@@ -123,12 +123,14 @@
   }
 
   /* ── Home & About Reel Sections — Mobile ── */
+  .home-reel-wrapper,
+  .about-reel-wrapper,
   #home-reel-section,
   #about-reel-section,
   .about-reel-section {
     width: 100% !important;
     max-width: 100vw !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     box-sizing: border-box !important;
     position: sticky !important;
     top: 0 !important;
