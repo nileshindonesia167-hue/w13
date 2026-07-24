@@ -170,6 +170,13 @@
     overflow: hidden !important;
   }
 
+  .home-reel-spacer,
+  .about-reel-spacer {
+    height: clamp(10px, 3vh, 30px) !important;
+    width: 100% !important;
+    pointer-events: none !important;
+  }
+
   .reel-grid {
     width: 100% !important;
     height: 100% !important;

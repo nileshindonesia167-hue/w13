@@ -1804,7 +1804,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 
-    const t  = ease(Math.max(0, Math.min(1, (scrollProg - .05) / .50)));
+    const maxP = vw <= 768 ? 0.72 : 0.50;
+    const t  = ease(Math.max(0, Math.min(1, (scrollProg - .05) / maxP)));
     const cW = lerp(homeAnchorWidth,            vw, t);
     const cH = lerp(homeAnchorHeight,           vh, t);
     const cX = lerp(homeAnchorLeftOffset, 0, t);
@@ -1911,7 +1912,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ScrollTrigger.create({
       trigger: homeSection,
       start: 'top top',
-      end: '+=900',
+      end: () => '+=' + (document.querySelector('.home-reel-spacer')?.offsetHeight || (window.innerWidth <= 768 ? 20 : 900)),
       onRefresh: () => {
         cacheHomeDimensions();
         updateHomeCard();
@@ -2021,7 +2022,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 
-    const t  = ease(Math.max(0, Math.min(1, (scrollProg - .05) / .50)));
+    const maxP = vw <= 768 ? 0.72 : 0.50;
+    const t  = ease(Math.max(0, Math.min(1, (scrollProg - .05) / maxP)));
     const cW = lerp(aboutAnchorWidth,            vw, t);
     const cH = lerp(aboutAnchorHeight,           vh, t);
     const cX = lerp(aboutAnchorLeftOffset, 0, t);
@@ -2126,7 +2128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ScrollTrigger.create({
       trigger: aboutSection,
       start: 'top top',
-      end: '+=900',
+      end: () => '+=' + (document.querySelector('.about-reel-spacer')?.offsetHeight || (window.innerWidth <= 768 ? 20 : 900)),
       onRefresh: () => {
         cacheAboutDimensions();
         updateAboutCard();
