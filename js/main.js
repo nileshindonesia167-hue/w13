@@ -1772,30 +1772,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let homeAnchorWidth = 0, homeAnchorHeight = 0, homeAnchorLeftOffset = 0, homeAnchorTopOffset = 0;
   function cacheHomeDimensions() {
-    const oldTransform = homeInner ? homeInner.style.transform : '';
-    if (homeInner) homeInner.style.transform = 'none';
-
     const ar = homeAnchor.getBoundingClientRect();
     const sRect = homeSection.getBoundingClientRect();
 
-    homeAnchorWidth = ar.width || 120;
-    homeAnchorHeight = ar.height || 70;
+    homeAnchorWidth = ar.width;
+    homeAnchorHeight = ar.height;
     homeAnchorLeftOffset = ar.left - sRect.left;
     homeAnchorTopOffset = ar.top - sRect.top;
-
-    if (homeInner) homeInner.style.transform = oldTransform;
   }
 
   function updateHomeCard() {
-    const sRect = homeSection.getBoundingClientRect();
-    const vw = Math.min(window.innerWidth, document.documentElement.clientWidth || window.innerWidth);
+    const vw = window.innerWidth;
     const vh = window.innerHeight;
 
     const t  = ease(Math.max(0, Math.min(1, (scrollProg - .05) / .50)));
     const cW = lerp(homeAnchorWidth,            vw, t);
     const cH = lerp(homeAnchorHeight,           vh, t);
-    const cX = lerp(homeAnchorLeftOffset, -sRect.left, t);
-    const cY = lerp(homeAnchorTopOffset,  -sRect.top, t);
+    const cX = lerp(homeAnchorLeftOffset, 0, t);
+    const cY = lerp(homeAnchorTopOffset,  0, t);
     const cR = lerp(12, 0, t);
 
     homeCard.style.width        = cW + 'px';
@@ -1894,10 +1888,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const homeWrapper = document.getElementById('home-reel-wrapper') || homeSection;
   if (typeof ScrollTrigger !== 'undefined') {
     ScrollTrigger.create({
-      trigger: homeWrapper,
+      trigger: homeSection,
       start: 'top top',
       end: '+=900',
       onRefresh: () => {
@@ -1996,30 +1989,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let aboutAnchorWidth = 0, aboutAnchorHeight = 0, aboutAnchorLeftOffset = 0, aboutAnchorTopOffset = 0;
   function cacheAboutDimensions() {
-    const oldTransform = aboutInner ? aboutInner.style.transform : '';
-    if (aboutInner) aboutInner.style.transform = 'none';
-
     const ar = aboutAnchor.getBoundingClientRect();
     const sRect = aboutSection.getBoundingClientRect();
 
-    aboutAnchorWidth = ar.width || 120;
-    aboutAnchorHeight = ar.height || 70;
+    aboutAnchorWidth = ar.width;
+    aboutAnchorHeight = ar.height;
     aboutAnchorLeftOffset = ar.left - sRect.left;
     aboutAnchorTopOffset = ar.top - sRect.top;
-
-    if (aboutInner) aboutInner.style.transform = oldTransform;
   }
 
   function updateAboutCard() {
-    const sRect = aboutSection.getBoundingClientRect();
-    const vw = Math.min(window.innerWidth, document.documentElement.clientWidth || window.innerWidth);
+    const vw = window.innerWidth;
     const vh = window.innerHeight;
 
     const t  = ease(Math.max(0, Math.min(1, (scrollProg - .05) / .50)));
     const cW = lerp(aboutAnchorWidth,            vw, t);
     const cH = lerp(aboutAnchorHeight,           vh, t);
-    const cX = lerp(aboutAnchorLeftOffset, -sRect.left, t);
-    const cY = lerp(aboutAnchorTopOffset,  -sRect.top, t);
+    const cX = lerp(aboutAnchorLeftOffset, 0, t);
+    const cY = lerp(aboutAnchorTopOffset,  0, t);
     const cR = lerp(12, 0, t);
 
     aboutCard.style.width        = cW + 'px';
@@ -2116,10 +2103,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const aboutWrapper = document.querySelector('.about-reel-wrapper') || aboutSection;
   if (typeof ScrollTrigger !== 'undefined') {
     ScrollTrigger.create({
-      trigger: aboutWrapper,
+      trigger: aboutSection,
       start: 'top top',
       end: '+=900',
       onRefresh: () => {
