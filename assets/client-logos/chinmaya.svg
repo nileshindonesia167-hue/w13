@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" width="220" height="70">
+  <g transform="translate(10, 4)">
+    <!-- Iconic Orange Oval Frame -->
+    <rect x="2" y="2" width="32" height="56" rx="16" fill="#FFF8F0" stroke="#E85D04" stroke-width="2.2"/>
+    <rect x="6" y="6" width="24" height="48" rx="12" fill="none" stroke="#E85D04" stroke-width="1.2"/>
+
+    <!-- Hanging Peacock Lamp (Deepam) -->
+    <line x1="18" y1="8" x2="18" y2="20" stroke="#E85D04" stroke-width="1.5"/>
+    <circle cx="18" cy="14" r="1.5" fill="#E85D04"/>
+    <path d="M 18 20 C 14 22, 14 26, 18 28 C 22 26, 22 22, 18 20 Z" fill="#E85D04"/>
+    <path d="M 12 32 Q 18 38 24 32 Q 18 35 12 32 Z" fill="#E85D04"/>
+    <!-- Lamp flames -->
+    <path d="M 18 42 C 16 38, 18 36, 18 36 C 18 36, 20 38, 18 42 Z" fill="#E85D04"/>
+
+    <!-- Text Side -->
+    <text x="44" y="26" font-family="'Arial Black', 'Trebuchet MS', sans-serif" font-weight="900" font-size="13" fill="#D9480F" letter-spacing="0.5">CHINMAYA</text>
+    <text x="44" y="40" font-family="'Arial Black', 'Trebuchet MS', sans-serif" font-weight="800" font-size="12" fill="#E85D04" letter-spacing="1">VIDYALAYA</text>
+    <text x="44" y="52" font-family="'Arial', sans-serif" font-weight="700" font-size="8.5" fill="#9A3412" letter-spacing="0.8">KEEP SMILING • CHINMAYA MISSION</text>
+  </g>
+</svg>

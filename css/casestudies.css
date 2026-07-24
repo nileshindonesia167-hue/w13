@@ -1,0 +1,933 @@
+/* ============================================================
+   BLINK BEYOND — CASE STUDIES & DETAIL PAGE STYLESHEET
+   ============================================================ */
+
+/* ── Main Layout ── */
+.cs-page-wrapper {
+  min-height: 100vh;
+  background: #06060c;
+  color: #ffffff;
+  padding-top: clamp(24px, 4vh, 48px);
+  padding-bottom: 80px;
+}
+
+.cs-container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Header Banner ── */
+.cs-header-banner {
+  margin-bottom: 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 24px;
+}
+
+.cs-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  background: rgba(61, 61, 255, 0.12);
+  border: 1px solid rgba(61, 61, 255, 0.3);
+  color: #3D3DFF;
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.cs-header-title {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.cs-header-desc {
+  font-family: var(--font-body, sans-serif);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 680px;
+  line-height: 1.5;
+}
+
+/* ── Split Layout: Left Menu + Right Grid ── */
+.cs-main-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+/* ── Left Sidebar Menu (4 Core Sections) ── */
+.cs-sidebar {
+  position: sticky;
+  top: 110px;
+  background: #0d0e18;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cs-sidebar-title {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  padding-left: 12px;
+}
+
+.cs-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cs-nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: left;
+}
+
+.cs-nav-btn .cs-nav-icon {
+  font-size: 16px;
+  opacity: 0.7;
+  transition: transform 0.25s ease;
+}
+
+.cs-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.cs-nav-btn:hover .cs-nav-icon {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+.cs-nav-btn.active {
+  background: rgba(61, 61, 255, 0.15);
+  border-color: rgba(61, 61, 255, 0.4);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(61, 61, 255, 0.2);
+}
+
+.cs-nav-btn.active .cs-nav-icon {
+  color: #3D3DFF;
+  opacity: 1;
+}
+
+/* ── Right Content Area ── */
+.cs-content-area {
+  min-width: 0;
+}
+
+/* Category Filter Bar */
+.cs-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.cs-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cs-pill {
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: #0f101c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cs-pill:hover,
+.cs-pill.active {
+  background: #3D3DFF;
+  border-color: #3D3DFF;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(61, 61, 255, 0.4);
+}
+
+.cs-count-tag {
+  font-family: var(--font-body, sans-serif);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── UIverse Style Cards Grid ── */
+.cs-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 24px;
+}
+
+/* Individual UIverse-style Card */
+.uiverse-card {
+  background: linear-gradient(145deg, #0d0f1b 0%, #070810 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+}
+
+.uiverse-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(61, 61, 255, 0.5);
+  box-shadow: 0 16px 36px rgba(61, 61, 255, 0.2), 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.uiverse-card-preview {
+  height: 180px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 20px;
+  overflow: hidden;
+}
+
+.uiverse-card-preview::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.uiverse-card:hover .uiverse-card-preview::before {
+  transform: scale(1.08);
+  opacity: 0.55;
+}
+
+.uiverse-badge {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(10, 10, 20, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: fit-content;
+  z-index: 2;
+}
+
+.uiverse-stat-pill {
+  font-family: var(--font-body, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  color: #00ffaa;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 255, 170, 0.3);
+  width: fit-content;
+  z-index: 2;
+  align-self: flex-end;
+}
+
+.uiverse-card-body {
+  padding: 22px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.uiverse-card-title {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  transition: color 0.25s ease;
+}
+
+.uiverse-card:hover .uiverse-card-title {
+  color: #3D3DFF;
+}
+
+.uiverse-card-desc {
+  font-family: var(--font-body, sans-serif);
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.45;
+  margin-bottom: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.uiverse-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.uiverse-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.uiverse-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #3D3DFF;
+  text-transform: uppercase;
+  transition: transform 0.25s ease;
+}
+
+.uiverse-card:hover .uiverse-view-btn {
+  transform: translateX(4px);
+  color: #ffffff;
+}
+
+/* ── INSTAGRAM GRID SHOWCASE (For Social Media Category) ── */
+.insta-profile-card {
+  background: linear-gradient(145deg, #0f111f 0%, #080912 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 32px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.insta-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.insta-avatar-wrap {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.insta-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #000;
+  border: 2px solid #000;
+}
+
+.insta-profile-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.insta-handle-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.insta-handle {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.insta-verified {
+  color: #0095f6;
+  font-size: 18px;
+}
+
+.insta-cta-btn {
+  padding: 7px 18px;
+  border-radius: 8px;
+  background: #0095f6;
+  color: #ffffff;
+  font-family: var(--font-body, sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.insta-cta-btn:hover {
+  opacity: 0.88;
+}
+
+.insta-stats-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 12px;
+}
+
+.insta-stat-item {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.insta-stat-item strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.insta-bio {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.45;
+}
+
+/* 3-Column Instagram Grid */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.insta-post-card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0a0b14;
+}
+
+.insta-post-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.insta-type-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.insta-post-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.insta-post-card:hover .insta-post-overlay {
+  opacity: 1;
+}
+
+.insta-post-card:hover .insta-post-thumb {
+  transform: scale(1.06);
+}
+
+.insta-overlay-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* Instagram Lightbox Modal */
+.insta-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.insta-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.insta-modal-box {
+  background: #0f101a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  max-width: 900px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  max-height: 85vh;
+}
+
+.insta-modal-media {
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.insta-modal-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.insta-modal-details {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.insta-modal-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 16px;
+}
+
+.insta-modal-caption {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 16px;
+}
+
+.insta-modal-audio {
+  font-size: 12px;
+  color: #00d2ff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.insta-modal-footer {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.insta-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* ── CASE STUDY DETAIL PAGE STYLES ── */
+.cs-detail-hero {
+  padding: 40px 0 30px;
+}
+
+.cs-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+}
+
+.cs-breadcrumb a {
+  color: #3D3DFF;
+  text-decoration: none;
+}
+
+.cs-detail-title {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: clamp(34px, 4.5vw, 62px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.08;
+  margin-bottom: 14px;
+}
+
+.cs-detail-tagline {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 30px;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+/* Key Metrics Stats Bar */
+.cs-detail-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.cs-detail-stat-card {
+  background: linear-gradient(145deg, #0e1120 0%, #070812 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.cs-stat-number {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 28px;
+  font-weight: 800;
+  color: #00ffaa;
+  margin-bottom: 4px;
+}
+
+.cs-stat-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Live Deployed Project Button */
+.cs-live-btn-wrap {
+  margin-bottom: 40px;
+}
+
+.cs-live-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  border-radius: 50px;
+  background: #3D3DFF;
+  color: #ffffff;
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 0 30px rgba(61, 61, 255, 0.5), 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cs-live-btn:hover {
+  background: #2a2aff;
+  box-shadow: 0 0 45px rgba(61, 61, 255, 0.8), 0 14px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+}
+
+.cs-live-btn .btn-icon {
+  font-size: 18px;
+}
+
+/* Big Showcase Image Frame */
+.cs-showcase-frame {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0d0f1a;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.cs-browser-header {
+  height: 40px;
+  background: #141624;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 8px;
+}
+
+.cs-browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.cs-browser-dot.red { background: #ff5f56; }
+.cs-browser-dot.yellow { background: #ffbd2e; }
+.cs-browser-dot.green { background: #27c93f; }
+
+.cs-browser-url {
+  margin-left: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px 16px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cs-showcase-image-box {
+  width: 100%;
+  min-height: 400px;
+  max-height: 550px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Narrative Sections Grid */
+.cs-story-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.cs-story-box {
+  background: #0d0e1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.cs-story-num {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  color: #3D3DFF;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.cs-story-heading {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.cs-story-p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cs-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cs-feature-item::before {
+  content: '✦';
+  color: #3D3DFF;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* Tech Stack Badge List */
+.cs-tech-pill-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.cs-tech-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── Mobile Responsive Rules for Case Studies ── */
+@media (max-width: 900px) {
+  .cs-main-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cs-sidebar {
+    position: static;
+    top: auto;
+  }
+
+  .cs-nav-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .cs-nav-btn {
+    white-space: nowrap;
+    padding: 10px 14px;
+    font-size: 12.5px;
+  }
+
+  .insta-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .cs-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-detail-stats-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insta-modal-box {
+    grid-template-columns: 1fr;
+    max-height: 90vh;
+  }
+
+  .insta-modal-media {
+    min-height: 260px;
+  }
+}
+
+.cs-floating-back-btn:hover {
+  background: rgba(32, 32, 50, 0.95) !important;
+  border-color: rgba(99, 102, 241, 0.6) !important;
+  color: #ffffff !important;
+  transform: translateX(-3px);
+  box-shadow: 0 10px 30px rgba(61, 61, 255, 0.35) !important;
+}
+
+@media (max-width: 600px) {
+  .cs-floating-back-btn span {
+    font-size: 11px;
+  }
+}

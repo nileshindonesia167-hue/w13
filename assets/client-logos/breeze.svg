@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" width="220" height="70">
+  <g transform="translate(10, 8)">
+    <!-- Stylized b with feather flourish -->
+    <g fill="#B88A28">
+      <!-- Main stem of b -->
+      <path d="M 18 8 C 18 8, 22 7, 24 15 C 24 25, 12 36, 12 48 C 12 52, 17 54, 25 51 C 32 48, 36 38, 32 31 C 28 25, 20 28, 20 35 C 20 42, 28 42, 24 48 C 22 50, 18 49, 16 46 C 14 42, 22 30, 22 20 C 22 14, 18 12, 14 12 C 12 12, 10 14, 10 14 Z" />
+      <!-- Feather leaf flourishes -->
+      <path d="M 8 26 C 2 24, 2 20, 8 18 C 12 21, 10 25, 8 26 Z" opacity="0.85"/>
+      <path d="M 6 34 C 0 32, 0 28, 6 26 C 10 29, 8 33, 6 34 Z" opacity="0.85"/>
+      <path d="M 10 40 C 4 39, 3 35, 9 33 C 13 36, 12 39, 10 40 Z" opacity="0.85"/>
+    </g>
+
+    <!-- Typography -->
+    <text x="45" y="32" font-family="'Times New Roman', 'Georgia', serif" font-weight="700" font-size="24" fill="#2E1A0F" letter-spacing="3">BREEZE</text>
+    <text x="46" y="47" font-family="'Arial', 'Helvetica', sans-serif" font-weight="500" font-size="10" fill="#785A1D" letter-spacing="1">The Roof-Top Café</text>
+  </g>
+</svg>

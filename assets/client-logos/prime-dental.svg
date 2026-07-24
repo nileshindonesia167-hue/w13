@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" width="220" height="70">
+  <g transform="translate(10, 8)">
+    <!-- Wordmark "prime" with Tooth Silhouette integrated into "m" -->
+    <text x="5" y="32" font-family="'Trebuchet MS', 'Arial', sans-serif" font-weight="700" font-size="34" fill="#2563EB" letter-spacing="-0.5">pri</text>
+    
+    <!-- Tooth shape integrated into 'm' -->
+    <g transform="translate(56, 12)">
+      <path d="M 4 8 C 4 2, 14 0, 18 6 C 22 0, 32 2, 32 8 C 32 18, 28 26, 25 30 C 23 33, 21 28, 18 24 C 15 28, 13 33, 11 30 C 8 26, 4 18, 4 8 Z" fill="none" stroke="#2563EB" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M 12 12 C 14 8, 22 8, 24 12" fill="none" stroke="#2563EB" stroke-width="2"/>
+    </g>
+
+    <text x="94" y="32" font-family="'Trebuchet MS', 'Arial', sans-serif" font-weight="700" font-size="34" fill="#2563EB" letter-spacing="-0.5">e</text>
+
+    <!-- Subtitle "DENTAL CLINIK" -->
+    <text x="22" y="48" font-family="'Arial', sans-serif" font-weight="700" font-size="10.5" fill="#1E3A8A" letter-spacing="3.5">DENTAL CLINIK</text>
+  </g>
+</svg>

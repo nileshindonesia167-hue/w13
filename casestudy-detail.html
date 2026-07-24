@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study Details | Blink Beyond</title>
+  <meta name="description" content="Read detailed case study breakdown, strategy, key deliverables, and measured business results.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/desktop/desktop.css">
+  <link rel="stylesheet" href="css/tablet/tablet.css">
+  <link rel="stylesheet" href="css/mobile/mobile.css">
+  <link rel="stylesheet" href="css/casestudies.css">
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    (function() {
+      try {
+        var seen = localStorage.getItem('bb_loader_seen') === '1' || /(?:^|; )bb_loader_seen=1/.test(document.cookie);
+        if (seen) {
+          document.documentElement.classList.add('bb-loader-skip');
+          document.documentElement.classList.add('loader-skip');
+        }
+      } catch (e) {}
+      try {
+        if (sessionStorage.getItem('bb_page_transition') === '1') {
+          document.documentElement.classList.add('bb-entering');
+          document.documentElement.style.background = '#3D3DFF';
+          document.documentElement.style.backgroundColor = '#3D3DFF';
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-transition-overlay"></div>
+
+  <!-- MAIN CASE STUDY DETAIL CONTENT -->
+  <main class="cs-page-wrapper" style="padding-top: 40px;">
+    <div class="cs-container" id="csDetailContainer">
+      <!-- Dynamically populated by JS -->
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/scrolltrigger.min.js"></script>
+  <script src="js/casestudies-data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('csDetailContainer');
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = urlParams.get('id') || 'webdev-1';
+
+      const project = window.CASE_STUDIES_DATA.find(p => p.id === projectId) || window.CASE_STUDIES_DATA[0];
+
+      // Document title
+      document.title = `${project.title} | Case Study — Blink Beyond`;
+
+      let html = `
+        <!-- TOP INLINE BACK BUTTON -->
+        <div style="margin-bottom: 20px;">
+          <a href="casestudies.html?cat=${project.category}" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 20px; color: #ffffff; font-size: 13px; font-weight: 700; text-decoration: none; text-transform: uppercase; font-family: var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: 1px; transition: all 0.2s ease;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <span>Back to Case Studies</span>
+          </a>
+        </div>
+
+        <!-- BREADCRUMB -->
+        <nav class="cs-breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <a href="casestudies.html">Case Studies</a>
+          <span>/</span>
+          <a href="casestudies.html?cat=${project.category}">${project.categoryName}</a>
+          <span>/</span>
+          <span style="color: #ffffff;">${project.title}</span>
+        </nav>
+
+        <!-- HERO HEADER -->
+        <header class="cs-detail-hero">
+          <span class="cs-header-badge">${project.badgeText}</span>
+          <h1 class="cs-detail-title">${project.title}</h1>
+          <p class="cs-detail-tagline">${project.tagline}</p>
+
+          <!-- KEY METRICS BAR -->
+          <div class="cs-detail-stats-bar">
+      `;
+
+      project.stats.forEach(stat => {
+        html += `
+          <div class="cs-detail-stat-card">
+            <div class="cs-stat-number">${stat}</div>
+            <div class="cs-stat-label">Measured Growth Metric</div>
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+
+          <!-- LIVE DEPLOYED PROJECT BUTTON -->
+          <div class="cs-live-btn-wrap">
+            <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="cs-live-btn">
+              <span>VIEW LIVE PROJECT</span>
+              <span class="btn-icon">↗</span>
+            </a>
+          </div>
+        </header>
+
+        <!-- SHOWCASE IMAGE / BROWSER MOCKUP -->
+        <div class="cs-showcase-frame">
+          <div class="cs-browser-header">
+            <span class="cs-browser-dot red"></span>
+            <span class="cs-browser-dot yellow"></span>
+            <span class="cs-browser-dot green"></span>
+            <span class="cs-browser-url">${project.liveUrl}</span>
+          </div>
+          <div class="cs-showcase-image-box" style="background:${project.thumbnailGradient};">
+            <div style="text-align:center; padding:40px 20px;">
+              <span style="font-family:var(--font-display, 'Barlow Condensed'); font-size:13px; letter-spacing:3px; color:${project.accentColor}; font-weight:800; text-transform:uppercase; margin-bottom:12px; display:block;">LIVE SHOWCASE DEMO</span>
+              <h2 style="font-family:var(--font-display, 'Barlow Condensed'); font-size: clamp(28px, 3.5vw, 44px); font-weight:800; color:#ffffff; text-transform:uppercase; margin-bottom:12px;">${project.title}</h2>
+              <p style="font-size:15px; color:rgba(255,255,255,0.75); max-width:600px; margin: 0 auto 20px;">Client: ${project.client} • Industry: ${project.industry}</p>
+              <a href="${project.liveUrl}" target="_blank" style="display:inline-flex; align-items:center; gap:8px; padding:10px 24px; border-radius:30px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:#fff; font-size:13px; font-weight:700; text-decoration:none;">Open Live Site Preview ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- STORY & NARRATIVE GRID -->
+        <div class="cs-story-grid">
+          <div>
+            <!-- 01. THE CLIENT & CHALLENGE -->
+            <div class="cs-story-box">
+              <div class="cs-story-num">01 — THE CHALLENGE</div>
+              <h2 class="cs-story-heading">Problem Statement &amp; Objectives</h2>
+              <p class="cs-story-p">${project.challenge}</p>
+            </div>
+
+            <!-- 02. OUR SOLUTION & STRATEGY -->
+            <div class="cs-story-box">
+              <div class="cs-story-num">02 — STRATEGY &amp; EXECUTION</div>
+              <h2 class="cs-story-heading">Our Engineering &amp; Design Approach</h2>
+              <p class="cs-story-p">${project.solution}</p>
+            </div>
+
+            <!-- 03. KEY DELIVERABLES -->
+            <div class="cs-story-box">
+              <div class="cs-story-num">03 — KEY DELIVERABLES</div>
+              <h2 class="cs-story-heading">Features &amp; Implemented Assets</h2>
+              <ul class="cs-feature-list">
+      `;
+
+      project.features.forEach(f => {
+        html += `<li class="cs-feature-item">${f}</li>`;
+      });
+
+      html += `
+              </ul>
+            </div>
+          </div>
+
+          <!-- SIDEBAR METADATA & TECH STACK -->
+          <div>
+            <div class="cs-story-box" style="position: sticky; top: 110px;">
+              <div class="cs-story-num">PROJECT OVERVIEW</div>
+              
+              <div style="margin-bottom:20px;">
+                <div style="font-size:12px; color:rgba(255,255,255,0.5); text-transform:uppercase; margin-bottom:4px;">CLIENT</div>
+                <div style="font-weight:700; font-size:15px; color:#fff;">${project.client}</div>
+              </div>
+
+              <div style="margin-bottom:20px;">
+                <div style="font-size:12px; color:rgba(255,255,255,0.5); text-transform:uppercase; margin-bottom:4px;">INDUSTRY</div>
+                <div style="font-weight:700; font-size:15px; color:#fff;">${project.industry}</div>
+              </div>
+
+              <div style="margin-bottom:20px;">
+                <div style="font-size:12px; color:rgba(255,255,255,0.5); text-transform:uppercase; margin-bottom:4px;">TIMELINE</div>
+                <div style="font-weight:700; font-size:15px; color:#fff;">${project.timeline}</div>
+              </div>
+
+              <div style="margin-bottom:24px;">
+                <div style="font-size:12px; color:rgba(255,255,255,0.5); text-transform:uppercase; margin-bottom:8px;">TECHNOLOGY &amp; TOOLS</div>
+                <div class="cs-tech-pill-wrap">
+      `;
+
+      project.techStack.forEach(tech => {
+        html += `<span class="cs-tech-pill">${tech}</span>`;
+      });
+
+      html += `
+                </div>
+              </div>
+
+              <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="cs-live-btn" style="width:100%; justify-content:center; padding:14px 20px; font-size:13px;">
+                <span>VISIT LIVE SITE</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM NAVIGATION -->
+        <div style="display:flex; align-items:center; justify-content:space-between; padding-top:30px; border-top:1px solid rgba(255,255,255,0.1); margin-top:40px;">
+          <a href="casestudies.html?cat=${project.category}" class="service-case-study-btn">
+            <span>← ALL ${project.categoryName.toUpperCase()} CASE STUDIES</span>
+          </a>
+          <a href="contact.html" class="service-case-study-btn" style="background:#3D3DFF; border-color:#3D3DFF;">
+            <span>START A SIMILAR PROJECT</span>
+            <span>→</span>
+          </a>
+        </div>
+      `;
+
+      container.innerHTML = html;
+    });
+  </script>
+  <!-- ═══════════════ FLOATING ACTION BUTTONS ═══════════════ -->
+  <div class="fab-container">
+    <div class="fab-options">
+      <!-- Instagram Option -->
+      <a href="https://instagram.com/blinkbeyond" target="_blank" rel="noopener" class="fab-option instagram-btn" aria-label="Follow on Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+        </svg>
+      </a>
+      <!-- WhatsApp Option -->
+      <a href="https://wa.me/919545556009" target="_blank" rel="noopener" class="fab-option whatsapp-btn" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+      </a>
+    </div>
+    <!-- Main Toggle Button -->
+    <button class="fab-toggle" aria-label="Open Actions">
+      <svg class="icon-chat" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 8V4H8"/>
+        <rect width="16" height="12" x="4" y="8" rx="2"/>
+        <path d="M2 14h2"/>
+        <path d="M20 14h2"/>
+        <path d="M15 13v2"/>
+        <path d="M9 13v2"/>
+      </svg>
+      <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+</body>
+</html>

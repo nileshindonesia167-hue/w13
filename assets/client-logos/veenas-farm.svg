@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" width="220" height="70">
+  <defs>
+    <linearGradient id="sunsetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+    <linearGradient id="bgCircle" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(10, 5)">
+    <!-- Round Farm Emblem -->
+    <circle cx="30" cy="30" r="28" fill="url(#bgCircle)" stroke="#D97706" stroke-width="1.5"/>
+    
+    <!-- Sunset background in circle -->
+    <path d="M 5 30 A 25 25 0 0 1 55 30 Z" fill="url(#sunsetGrad)" opacity="0.85"/>
+    <circle cx="30" cy="18" r="7" fill="#FEF3C7" opacity="0.9"/>
+
+    <!-- Villa Roof Silhouette -->
+    <polygon points="20,38 30,28 40,38" fill="#991B1B"/>
+    <polygon points="12,42 30,30 48,42" fill="#B91C1C"/>
+    <!-- Farm House Base -->
+    <rect x="22" y="38" width="16" height="12" fill="#FFFFFF"/>
+    <rect x="27" y="42" width="6" height="8" fill="#451A03"/>
+
+    <!-- Cursive Brand Text -->
+    <text x="68" y="28" font-family="'Brush Script MT', 'Georgia', cursive, serif" font-weight="700" font-size="22" fill="#3B1202" letter-spacing="0.5">Veena's</text>
+    <path d="M 132 18 C 135 15, 138 15, 140 18 C 137 19, 135 22, 132 18 Z" fill="#15803D"/>
+    <text x="70" y="48" font-family="'Brush Script MT', 'Georgia', cursive, serif" font-weight="700" font-size="22" fill="#3B1202" letter-spacing="1">Farm</text>
+  </g>
+</svg>

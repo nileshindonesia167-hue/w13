@@ -1,0 +1,1 @@
+- [Identical desktop layout across breakpoints](identical-desktop-layout.md) — disabled all max-width media queries (set to min-width:99999px) to force desktop CSS everywhere; touch JS fallbacks left intact.

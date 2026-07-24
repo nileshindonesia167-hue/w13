@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE885" />
+      <stop offset="30%" stop-color="#F2C744" />
+      <stop offset="70%" stop-color="#D49E24" />
+      <stop offset="100%" stop-color="#9E6F0B" />
+    </linearGradient>
+    <linearGradient id="goldBright" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3B0" />
+      <stop offset="100%" stop-color="#E5AF30" />
+    </linearGradient>
+    <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2a2c33" />
+      <stop offset="100%" stop-color="#141518" />
+    </radialGradient>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Dark Background -->
+  <rect width="500" height="500" rx="40" fill="url(#bgGlow)"/>
+
+  <!-- Gold Emblem Group -->
+  <g fill="url(#goldGrad)" stroke="none">
+    
+    <!-- LIONS (Ashoka Lion Capital) -->
+    <!-- Center Lion Face & Mane -->
+    <path d="M250 45 C235 45 220 57 215 73 C210 90 212 105 205 120 C198 135 188 145 185 160 C182 175 190 190 200 200 C208 208 220 213 230 217 L230 235 L270 235 L270 217 C280 213 292 208 300 200 C310 190 318 175 315 160 C312 145 302 135 295 120 C288 105 290 90 285 73 C280 57 265 45 250 45 Z" />
+
+    <!-- Left Lion Profile -->
+    <path d="M210 75 C195 67 178 73 165 85 C150 100 145 120 140 137 C135 153 132 167 142 180 C150 190 165 197 178 203 L185 215 L210 205 C200 193 195 180 195 165 C195 145 202 125 210 105 Z" />
+
+    <!-- Right Lion Profile -->
+    <path d="M290 75 C305 67 322 73 335 85 C350 100 355 120 360 137 C365 153 368 167 358 180 C350 190 335 197 322 203 L315 215 L290 205 C300 193 305 180 305 165 C305 145 298 125 290 105 Z" />
+
+    <!-- Lion Facial Details (Muzzle, Eyes, Mane Lines) -->
+    <!-- Center Lion Snout -->
+    <ellipse cx="250" cy="110" rx="14" ry="18" fill="#141518" />
+    <polygon points="250,113 240,97 260,97" fill="url(#goldBright)" />
+    <!-- Eyes -->
+    <ellipse cx="232" cy="89" rx="5" ry="3" fill="url(#goldBright)" />
+    <ellipse cx="268" cy="89" rx="5" ry="3" fill="url(#goldBright)" />
+    <circle cx="232" cy="89" r="1.5" fill="#141518" />
+    <circle cx="268" cy="89" r="1.5" fill="#141518" />
+
+    <!-- Ears -->
+    <path d="M222 63 C218 55 228 50 233 60 Z" fill="url(#goldBright)"/>
+    <path d="M278 63 C282 55 272 50 267 60 Z" fill="url(#goldBright)"/>
+
+    <!-- Mane Strands Center -->
+    <path d="M218 125 C205 140 200 160 210 175 C220 190 235 195 250 197 C265 195 280 190 290 175 C300 160 295 140 282 125" fill="none" stroke="url(#goldBright)" stroke-width="4" />
+    <path d="M228 140 C218 153 215 167 225 180 C235 190 245 193 250 193 C255 193 265 190 275 180 C285 167 282 153 272 140" fill="none" stroke="#141518" stroke-width="3" />
+
+    <!-- Mouth/Snout Center -->
+    <path d="M242 119 C246 123 254 123 258 119 L250 129 Z" fill="url(#goldBright)" />
+
+    <!-- ABACUS / FRIEZE (Base Platform with Wheel & Animals) -->
+    <!-- Top Abacus Moulding -->
+    <rect x="130" y="235" width="240" height="14" rx="3" fill="url(#goldBright)" />
+    
+    <!-- Middle Frieze Panel -->
+    <rect x="135" y="249" width="230" height="48" rx="2" fill="url(#goldGrad)" />
+    <rect x="138" y="251" width="224" height="44" rx="2" fill="#141518" opacity="0.15" />
+
+    <!-- Ashoka Chakra (Dharma Wheel in Center of Frieze) -->
+    <circle cx="250" cy="273" r="18" fill="none" stroke="url(#goldBright)" stroke-width="3" />
+    <circle cx="250" cy="273" r="4" fill="url(#goldBright)" />
+    <!-- 24 Spokes -->
+    <g stroke="url(#goldBright)" stroke-width="1.2">
+      <line x1="250" y1="255" x2="250" y2="291" />
+      <line x1="232" y1="273" x2="268" y2="273" />
+      <line x1="237" y1="260" x2="263" y2="286" />
+      <line x1="237" y1="286" x2="263" y2="260" />
+      <line x1="243" y1="256" x2="257" y2="290" />
+      <line x1="243" y1="290" x2="257" y2="256" />
+      <line x1="233" y1="266" x2="267" y2="280" />
+      <line x1="233" y1="280" x2="267" y2="266" />
+    </g>
+
+    <!-- Galloping Horse (Left Side of Wheel) -->
+    <path d="M162 279 C168 275 174 269 182 265 C188 262 194 267 190 273 C186 279 178 283 170 285 Z" fill="url(#goldBright)" />
+    <path d="M176 265 C173 259 168 257 163 261" stroke="url(#goldBright)" stroke-width="2" fill="none"/>
+
+    <!-- Bull / Elephant (Right Side of Wheel) -->
+    <path d="M312 279 C318 283 326 279 330 273 C334 267 328 262 322 265 C314 269 308 275 312 279 Z" fill="url(#goldBright)" />
+    <path d="M328 265 C332 259 337 257 342 261" stroke="url(#goldBright)" stroke-width="2" fill="none"/>
+
+    <!-- Bottom Abacus Moulding -->
+    <rect x="130" y="297" width="240" height="12" rx="3" fill="url(#goldBright)" />
+
+    <!-- BELL LOTUS (Inverted Lotus Base) -->
+    <path d="M150 309 C170 325 200 343 250 343 C300 343 330 325 350 309 C330 317 290 329 250 329 C210 329 170 317 150 309 Z" fill="url(#goldGrad)" />
+    <path d="M170 309 L180 335 M210 309 L215 340 M250 309 L250 343 M290 309 L285 340 M330 309 L320 335" stroke="#141518" stroke-width="2" opacity="0.3" />
+
+    <!-- Pedestal Base Bar -->
+    <rect x="140" y="343" width="220" height="8" rx="2" fill="url(#goldBright)" />
+
+  </g>
+
+  <!-- SATYAMEV JAYATE (सत्यमेव जयते in Devanagari) -->
+  <text x="250" y="390" text-anchor="middle" font-family="'Noto Sans Devanagari', 'Yatra One', 'Sanskrit Text', 'Arial Unicode MS', sans-serif" font-size="30" font-weight="700" fill="url(#goldBright)" letter-spacing="2" filter="url(#goldGlow)">सत्यमेव जयते</text>
+
+  <!-- GOVERNMENT OF INDIA -->
+  <text x="250" y="440" text-anchor="middle" font-family="'Times New Roman', 'Georgia', 'Cinzel', serif" font-size="32" font-weight="900" fill="url(#goldBright)" letter-spacing="1.5" filter="url(#goldGlow)">Government of India</text>
+</svg>
