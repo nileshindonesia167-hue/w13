@@ -23,6 +23,8 @@
         if (seen) {
           document.documentElement.classList.add('bb-loader-skip');
           document.documentElement.classList.add('loader-skip');
+        } else {
+          document.documentElement.classList.add('is-preloading');
         }
       } catch (e) {}
       try {

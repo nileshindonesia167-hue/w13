@@ -222,9 +222,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (getSeenFlag()) {
+      docEl.classList.remove('is-preloading');
       loader.classList.add('skip');
       loader.remove();
     } else {
+      docEl.classList.add('is-preloading');
       setSeenFlag();
       const counterEl = document.getElementById('loader-percent');
       const barFill = document.getElementById('loader-bar-fill');
@@ -263,6 +265,23 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           setTimeout(() => {
             loader.classList.add('hidden');
+            docEl.classList.remove('is-preloading');
+
+            const fabContainer = document.querySelector('.fab-container');
+            const agentBtn = document.getElementById('ai-agent-btn');
+            if (fabContainer && typeof gsap !== 'undefined') {
+              gsap.fromTo(fabContainer,
+                { opacity: 0, scale: 0.8 },
+                { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.4)', clearProps: 'all' }
+              );
+            }
+            if (agentBtn && typeof gsap !== 'undefined') {
+              gsap.fromTo(agentBtn,
+                { opacity: 0, scale: 0.8 },
+                { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.4)', clearProps: 'all' }
+              );
+            }
+
             setTimeout(() => loader.remove(), 900);
           }, 400);
         }

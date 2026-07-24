@@ -4205,6 +4205,25 @@ body.contact-page {
   display: none !important;
 }
 
+/* Hide Floating Action Button & Agent Button completely while preloader is active */
+html.is-preloading .fab-container,
+html.is-preloading #ai-agent-btn,
+body.is-preloading .fab-container,
+body.is-preloading #ai-agent-btn,
+.page-loader:not(.hidden):not(.skip) ~ .fab-container,
+.page-loader:not(.hidden):not(.skip) ~ #ai-agent-btn,
+.page-loader:not(.hidden):not(.skip) ~ * .fab-container,
+.page-loader:not(.hidden):not(.skip) ~ * #ai-agent-btn,
+#page-loader:not(.hidden):not(.skip) ~ .fab-container,
+#page-loader:not(.hidden):not(.skip) ~ #ai-agent-btn,
+#page-loader:not(.hidden):not(.skip) ~ * .fab-container,
+#page-loader:not(.hidden):not(.skip) ~ * #ai-agent-btn {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 /* Subtle background glow */
 .loader-bg-glow {
   position: absolute;
